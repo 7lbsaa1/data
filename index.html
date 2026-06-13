@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>قاعدة بيانات الطلاب</title>
+    <title>قاعدة بيانات الطلاب - العرض العام</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -12,6 +12,7 @@
     <header class="main-header">
         <div class="header-container">
             <h1><i class="fas fa-graduation-cap"></i> نظام إدارة وشؤون الطلاب</h1>
+            <p style="margin-bottom: 15px; opacity: 0.9;">لوحة عرض وبيانات الطلاب الفورية</p>
             <div class="search-box">
                 <i class="fas fa-search search-icon"></i>
                 <input type="text" id="searchInput" placeholder="ابحث عن طالب بالاسم أو التخصص...">
@@ -20,6 +21,10 @@
     </header>
 
     <main class="container">
+        <div style="text-align: left; margin-bottom: 20px;">
+            <a href="admin.html" class="admin-nav-link"><i class="fas fa-user-shield"></i> الدخول إلى لوحة التحكم (الأدمن)</a>
+        </div>
+
         <div class="students-grid" id="studentsGrid">
             </div>
     </main>
@@ -33,6 +38,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
