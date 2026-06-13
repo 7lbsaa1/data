@@ -1,0 +1,263 @@
+/* إعدادات الخطوط والألوان العامة */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* الهيدر وشريط البحث */
+.main-header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.header-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.search-box {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 45px 12px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    box-shadow: 0 4px 20px rgba(255,255,255,0.4);
+}
+
+.search-icon {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 1.1rem;
+}
+
+/* شبكة عرض الطلاب */
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* بطاقة الطالب */
+.student-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border: 1px solid #eef2f5;
+}
+
+.student-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card-decor {
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+}
+
+/* الصورة الشخصية أو البديل */
+.avatar-container {
+    margin-top: -40px;
+    margin-bottom: 15px;
+}
+
+.student-img {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* البديل في حال عدم وجود صورة */
+.no-img-avatar {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background-color: #e0e6ed;
+    color: #34495e;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.student-info {
+    text-align: center;
+    padding: 0 20px 20px 20px;
+    width: 100%;
+}
+
+.student-info h3 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.student-info .major {
+    color: #3498db;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.view-btn {
+    background-color: #2a5298;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+    width: 80%;
+}
+
+.view-btn:hover {
+    background-color: #1e3c72;
+}
+
+/* النافذة المنبثقة (Modal) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-card {
+    background: white;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.modal-overlay.active .modal-card {
+    transform: scale(1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.modal-header-bg {
+    height: 80px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+.modal-body {
+    padding: 25px;
+    text-align: center;
+}
+
+.modal-body .modal-avatar {
+    margin-top: -65px;
+    margin-bottom: 15px;
+}
+
+.modal-body h2 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.modal-body .modal-major {
+    color: #3498db;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.details-list {
+    text-align: right;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.detail-item i {
+    width: 30px;
+    color: #2a5298;
+    font-size: 1.1rem;
+}
+
+.detail-item span strong {
+    color: #555;
+}
