@@ -1,5 +1,15 @@
-/* إعدادات الخطوط والألوان العامة */
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+/* استيراد خط القاهرة الهندسي الأنيق والمناسب للمواقع الاحترافية */
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;700&display=swap');
+:root {
+    --primary-color: #1e3c72;
+    --secondary-color: #2a5298;
+    --accent-color: #3498db;
+    --bg-color: #f0f4f8;
+    --text-color: #2c3e50;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.06);
+}
 
 * {
     box-sizing: border-box;
@@ -9,173 +19,236 @@
 }
 
 body {
-    background-color: #f4f7f6;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px 20px;
 }
 
-/* الهيدر وشريط البحث */
+/* تصميم الهيدر الجديد الفخم */
 .main-header {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
     color: #fff;
-    padding: 40px 20px;
+    padding: 60px 20px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.15);
 }
 
-.header-container h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    font-weight: 700;
+.main-header h1 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+    animation: slideDown 0.6s ease-out;
 }
 
+.main-header .subtitle {
+    font-size: 1rem;
+    opacity: 0.85;
+    font-weight: 400;
+    margin-bottom: 25px;
+    animation: fadeIn 1s ease-out;
+}
+
+/* شريط البحث بتقنية زجاجية وموضع أنيق */
 .search-box {
     position: relative;
-    max-width: 500px;
+    max-width: 550px;
     margin: 0 auto;
+    animation: scaleUp 0.5s ease-out;
 }
 
 .search-box input {
     width: 100%;
-    padding: 12px 45px 12px 20px;
-    border: none;
-    border-radius: 30px;
+    padding: 15px 50px 15px 25px;
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
     font-size: 1rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--text-color);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
     outline: none;
-    transition: all 0.3s ease;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .search-box input:focus {
-    box-shadow: 0 4px 20px rgba(255,255,255,0.4);
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+    border-color: var(--accent-color);
 }
 
 .search-icon {
     position: absolute;
-    right: 18px;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    color: #777;
-    font-size: 1.1rem;
+    color: #7f8c8d;
+    font-size: 1.2rem;
 }
 
-/* شبكة عرض الطلاب */
+/* شريط الإجراءات والروابط */
+.action-bar {
+    text-align: left;
+    margin-bottom: 25px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.admin-nav-link {
+    display: inline-block;
+    background: #2c3e50;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.admin-nav-link:hover {
+    background: #1a252f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* شبكة توزيع البطاقات (Grid) */
 .students-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 30px;
 }
 
-/* بطاقة الطالب */
+/* تصميم بطاقة الطالب الزجاجي الفخم وتأثير الحركة عند التحميل */
 .student-card {
-    background: #fff;
-    border-radius: 15px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--glass-border);
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    border: 1px solid #eef2f5;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation: cardEntrance 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
+/* تأثير التمرير الماوس الفخم للبطاقات */
 .student-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(31, 38, 135, 0.15);
+    border-color: rgba(52, 152, 219, 0.4);
 }
 
 .card-decor {
     width: 100%;
-    height: 60px;
-    background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+    height: 70px;
+    background: linear-gradient(135deg, #2c5364 0%, #203a43 100%);
 }
 
-/* الصورة الشخصية أو البديل */
 .avatar-container {
-    margin-top: -40px;
+    margin-top: -45px;
     margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
 }
 
 .student-img {
-    width: 85px;
-    height: 85px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease;
 }
 
-/* البديل في حال عدم وجود صورة */
+.student-card:hover .student-img {
+    transform: rotate(5deg) scale(1.05);
+}
+
 .no-img-avatar {
-    width: 85px;
-    height: 85px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
-    background-color: #e0e6ed;
-    color: #34495e;
+    background: linear-gradient(135deg, #d9e2ec 0%, #bcccdc 100%);
+    color: #486581;
     font-size: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 4px solid #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
 .student-info {
     text-align: center;
-    padding: 0 20px 20px 20px;
+    padding: 0 25px 25px 25px;
     width: 100%;
 }
 
 .student-info h3 {
-    font-size: 1.2rem;
-    color: #2c3e50;
-    margin-bottom: 5px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #102a43;
+    margin-bottom: 6px;
 }
 
 .student-info .major {
-    color: #3498db;
+    color: var(--accent-color);
     font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 15px;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 .view-btn {
-    background-color: #2a5298;
+    background: linear-gradient(135deg, #203a43 0%, #2c5364 100%);
     color: white;
     border: none;
-    padding: 8px 20px;
-    border-radius: 20px;
+    padding: 12px 20px;
+    border-radius: 50px;
     cursor: pointer;
     font-size: 0.9rem;
-    transition: background 0.3s;
-    width: 80%;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(32, 58, 67, 0.2);
 }
 
 .view-btn:hover {
-    background-color: #1e3c72;
+    background: linear-gradient(135deg, #2c5364 0%, #203a43 100%);
+    box-shadow: 0 6px 20px rgba(32, 58, 67, 0.3);
 }
 
-/* النافذة المنبثقة (Modal) */
+/* النافذة المنبثقة التفاعلية (Modal Pop-up) */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(15, 32, 39, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     z-index: 1000;
 }
 
@@ -187,77 +260,123 @@ body {
 .modal-card {
     background: white;
     width: 90%;
-    max-width: 450px;
-    border-radius: 20px;
+    max-width: 460px;
+    border-radius: 24px;
     overflow: hidden;
     position: relative;
-    transform: scale(0.8);
-    transition: transform 0.3s ease;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    transform: scale(0.7) translateY(30px);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
 }
 
 .modal-overlay.active .modal-card {
-    transform: scale(1);
+    transform: scale(1) translateY(0);
 }
 
 .close-btn {
     position: absolute;
-    top: 10px;
-    left: 15px;
-    background: none;
+    top: 15px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.2);
     border: none;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
     z-index: 10;
 }
 
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
 .modal-header-bg {
-    height: 80px;
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    height: 90px;
+    background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
 }
 
 .modal-body {
-    padding: 25px;
+    padding: 30px;
     text-align: center;
 }
 
 .modal-body .modal-avatar {
-    margin-top: -65px;
+    margin-top: -75px;
     margin-bottom: 15px;
 }
 
 .modal-body h2 {
-    color: #2c3e50;
+    color: #102a43;
+    font-weight: 800;
+    font-size: 1.5rem;
     margin-bottom: 5px;
 }
 
 .modal-body .modal-major {
-    color: #3498db;
-    font-weight: 600;
-    margin-bottom: 20px;
+    color: var(--accent-color);
+    font-weight: 700;
+    margin-bottom: 25px;
     display: inline-block;
+    font-size: 1rem;
 }
 
 .details-list {
     text-align: right;
-    border-top: 1px solid #eee;
-    padding-top: 15px;
+    border-top: 1px solid #eaeaea;
+    padding-top: 20px;
 }
 
 .detail-item {
     display: flex;
     align-items: center;
-    margin-bottom: 12px;
-    font-size: 0.95rem;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    background: #f8fafc;
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: 1px solid #edf2f7;
 }
 
 .detail-item i {
-    width: 30px;
-    color: #2a5298;
-    font-size: 1.1rem;
+    width: 35px;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
 }
 
 .detail-item span strong {
-    color: #555;
+    color: #486581;
+    margin-left: 5px;
+}
+
+/* ─── تعريفات حركات ومؤثرات الأنيميشن ─── */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }
