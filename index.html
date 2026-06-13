@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قاعدة بيانات الطلاب</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <h1><i class="fas fa-graduation-cap"></i> نظام إدارة وشؤون الطلاب</h1>
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="ابحث عن طالب بالاسم أو التخصص...">
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="students-grid" id="studentsGrid">
+            </div>
+    </main>
+
+    <div class="modal-overlay" id="studentModal">
+        <div class="modal-card">
+            <button class="close-btn" id="closeModalBtn">&times;</button>
+            <div class="modal-header-bg"></div>
+            <div class="modal-body" id="modalBody">
+                </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
